@@ -37,14 +37,14 @@
 
         mine {
             bindings = <
-&kp F11       &kp F1    &kp F2          &kp F3        &kp F4          &kp F5                       &kp MINUS      &kp EQUAL     &kp SLASH     &kp ASTERISK    &kp GRAVE     &kp LEFT_CONTROL
-&kp F12       &kp F6    &kp F7          &kp F8        &kp F9          &kp F10                      &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9    &kp NUMBER_0  &bt BT_CLR_ALL
-&to 0         &mkp MB4  &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB4                     &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6    &kp NUMBER_0  &bt BT_CLR
-&kp LEFT_GUI  &kp Z     &kp X           &kp C         &kp V           &kp B                        &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_0  &kp RIGHT_BRACKET
-                        &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp UP_ARROW  &kp DOWN_ARROW
-                                                      &kp LEFT_SHIFT                                              &kp SLASH
-                                                                      &kp DEL   &trans  &kp ESC    &kp SPACE
-                                                                      &trans    &trans  &kp ENTER  &kp BACKSPACE
+&kp F11       &kp F1    &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH     &kp ASTERISK    &kp GRAVE     &kp LEFT_CONTROL
+&kp F12       &kp F6    &kp F7          &kp F8        &kp F9          &kp F10                          &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9    &kp NUMBER_0  &bt BT_CLR_ALL
+&to 0         &mkp MB4  &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB4                         &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6    &kp NUMBER_0  &bt BT_CLR
+&kp LEFT_GUI  &kp Z     &kp X           &kp C         &kp V           &kp B                            &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3    &kp NUMBER_0  &kp RIGHT_BRACKET
+                        &msc SCRL_DOWN  &msc SCRL_UP                                                                                &kp UP_ARROW  &kp DOWN_ARROW
+                                                      &kp LEFT_SHIFT                                                  &kp SLASH
+                                                                      &kp CAPSLOCK  &trans  &kp ESC    &kp SPACE
+                                                                      &trans        &trans  &kp ENTER  &kp BACKSPACE
             >;
         };
     };
