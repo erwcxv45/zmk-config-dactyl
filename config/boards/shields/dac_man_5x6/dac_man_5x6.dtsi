@@ -1,6 +1,10 @@
 #include <physical_layouts.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-
+/ {
+    /* Эта секция связывает драйвер батареи nice_nano с твоим щилдом */
+    chosen {
+        zmk,battery = &vbatt;
+    };
 / {
     layout_5x6_5: layout_5x6_5 {
         compatible = "zmk,physical-layout";
