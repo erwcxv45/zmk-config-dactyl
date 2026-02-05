@@ -1,11 +1,12 @@
 manifest:
   remotes:
     - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
+      url_base: https://github.com/zmkfirmware
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      # Используем стабильную версию до перехода на Zephyr 4.x
+      revision: v0.1 
       import: app/west.yml
   self:
     path: config
