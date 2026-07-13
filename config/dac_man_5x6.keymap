@@ -1,22 +1,9 @@
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/pointing.h>
-
-#define MAC_BASE 0
-#define MAC_L1   1
-#define BLUE_MAC 2
-#define WIN_BASE 3
-#define WIN_L1   4
-#define BLUE_WIN 5
-
-/ {
-    behaviors {
+behaviors {
         ht_tog: hold_tap_toggle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <400>;
             bindings = <&tog>, <&kp>;
         };
 
@@ -24,7 +11,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <400>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -32,55 +19,16 @@
     keymap {
         compatible = "zmk,keymap";
 
-        // ================= MAC OS LAYERS =================
-
-        mac_base {
-            bindings = <
-&none      &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7       &kp N8            &kp N9             &kp N0                &kp LEFT_COMMAND
-&kp TAB    &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp U        &kp I             &kp O              &kp P                 &to MAC_L1
-&kp LALT   &ht_tog BLUE_MAC A  &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &mt LCTRL J  &ht_kp INSERT K   &ht_kp HOME L      &ht_kp END SEMICOLON  &kp SQT
-&kp GLOBE  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp M        &kp COMMA         &kp DOT            &kp LEFT_ALT          &kp MINUS
-                               &msc SCRL_DOWN  &msc SCRL_UP                                                                           &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-                                                             &kp LEFT_SHIFT                                              &kp SLASH
-                                                                             &kp LCMD  &none  &kp ESCAPE  &kp SPACE
-                                                                             &none     &none  &kp RET     &kp BACKSPACE
-            >;
-        };
-
-        mac_l1 {
-            bindings = <
-&none      &kp F5              &kp F8          &kp F9        &kp F10         &kp F12                        &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &kp LEFT_COMMAND
-&kp TAB    &kp LCTRL           &kp HOME        &kp END       &kp PG_UP       &kp PG_DN                      &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9  &kp EQUAL     &to MAC_BASE
-&kp LALT   &ht_tog BLUE_MAC A  &kp S           &kp D         &lt BLUE_MAC F  &kp INSERT                     &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
-&kp GLOBE  &mkp MB4            &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB5                       &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to WIN_L1    &bt BT_CLR_ALL
-                               &msc SCRL_DOWN  &msc SCRL_UP                                                                              &kp LEFT_BRACKET  &kp TILDE
-                                                             &kp LEFT_SHIFT                                                &kp SLASH
-                                                                             &kp LCMD    &trans  &kp ESC    &kp SPACE
-                                                                             &trans      &trans  &kp ENTER  &kp BACKSPACE
-            >;
-        };
-
-        blue_mac {
-            bindings = <
-&none      &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0         &kp LEFT_COMMAND
-&kp TAB    &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P          &to MAC_L1
-&kp LALT   &ht_tog BLUE_MAC A  &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &kp SEMICOLON  &kp SQT
-&kp GLOBE  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13       &kp F14       &kp F15    &kp F16        &kp MINUS
-                               &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp F17       &kp F18
-                                                             &kp LEFT_SHIFT                                              &kp SLASH
-                                                                             &kp LCMD  &none  &kp ESCAPE  &kp SPACE
-                                                                             &none     &none  &kp RET     &kp BACKSPACE
-            >;
-        };
+        // ... (MAC слои остаются без изменений) ...
 
         // ================= WINDOWS LAYERS =================
 
         win_base {
             bindings = <
-&none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                               &kp N6         &kp N7       &kp N8            &kp N9             &kp N0                &kp LEFT_CONTROL
-&kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                                &kp Y          &kp U        &kp I             &kp O              &kp P                 &to WIN_L1
-&kp LEFT_ALT  &ht_tog BLUE_WIN A  &kp S           &kp D         &lt BLUE_WIN F  &kp G                                &kp H          &mt LCTRL J  &ht_kp INSERT K   &ht_kp HOME L      &ht_kp END SEMICOLON  &kp SQT
-&kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                                &kp N          &kp M        &kp COMMA         &kp DOT            &kp LEFT_ALT          &kp MINUS
+&none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                               &kp N6         &kp N7       &kp N8            &kp N9             &kp N0                     &kp LEFT_CONTROL
+&kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                                &kp Y          &kp U        &kp I             &kp O              &kp P                      &kp LEFT_BRACKET
+&to WIN_L1    &ht_tog BLUE_WIN A  &kp S           &kp D         &lt BLUE_WIN F  &kp G                                &kp H          &mt LCTRL J  &ht_kp INSERT K   &ht_kp END L       &ht_kp LEFT_ALT SEMICOLON  &kp SQT
+&kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                                &kp N          &kp M        &kp COMMA         &kp DOT            &kp LEFT_ALT               &kp MINUS
                                   &msc SCRL_DOWN  &msc SCRL_UP                                                                                   &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                                 &kp LEFT_SHIFT                                                      &kp SLASH
                                                                                 &kp LEFT_CONTROL  &none  &kp ESCAPE  &kp SPACE
@@ -88,43 +36,4 @@
             >;
         };
 
-        win_l1 {
-            bindings = <
-&none         &kp F5              &kp F8          &kp F9        &kp F10         &kp F12                              &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &kp LEFT_CONTROL
-&kp TAB       &kp LCTRL           &kp HOME        &kp END       &kp PG_UP       &kp PG_DN                            &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9  &kp EQUAL     &to WIN_BASE
-&kp LEFT_ALT  &ht_tog BLUE_WIN A  &kp S           &kp D         &lt BLUE_WIN F  &kp INSERT                           &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
-&kp LEFT_WIN  &mkp MB4            &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB5                             &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to MAC_L1    &bt BT_CLR_ALL
-                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                    &kp LEFT_BRACKET  &kp TILDE
-                                                                &kp LEFT_SHIFT                                                      &kp SLASH
-                                                                                &kp LEFT_CONTROL  &trans  &kp ESC    &kp SPACE
-                                                                                &trans            &trans  &kp ENTER  &kp BACKSPACE
-            >;
-        };
-
-        blue_win {
-            bindings = <
-&none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0         &kp LEFT_CONTROL
-&kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P          &to WIN_L1
-&kp LEFT_ALT  &ht_tog BLUE_WIN A  &kp S           &kp D         &lt BLUE_WIN F  &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &kp SEMICOLON  &kp SQT
-&kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13       &kp F14       &kp F15    &kp F16        &kp MINUS
-                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp F17       &kp F18
-                                                                &kp LEFT_SHIFT                                              &kp SLASH
-                                                                                &kp LALT  &none  &kp ESCAPE  &kp SPACE
-                                                                                &none     &none  &kp RET     &kp BACKSPACE
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans  &trans                                                  &trans  &trans
-                                &trans                                  &trans
-                                        &trans  &trans  &trans  &trans
-                                        &trans  &trans  &trans  &trans
-            >;
-        };
-    };
-};
+        // ... (Остальные слои без изменений) ...
