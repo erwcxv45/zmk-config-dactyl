@@ -5,4 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main # Строго main, чтобы получить HWMv2
+      revision: main
+      import: app/west.yml
+  self:
+    path: config
