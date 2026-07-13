@@ -62,10 +62,10 @@
 
         blue_mac {
             bindings = <
-&none      &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0         &kp LEFT_COMMAND
-&kp TAB    &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P          &kp LEFT_BRACKET
-&to MAC_L1 &ht_tog BLUE_MAC A  &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &kp SEMICOLON  &kp SQT
-&kp GLOBE  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13       &kp F14       &kp F15    &kp F16        &kp MINUS
+&none      &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0                     &kp LEFT_COMMAND
+&kp TAB    &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P                      &kp LEFT_BRACKET
+&to MAC_L1 &ht_tog BLUE_MAC A  &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp LEFT_ALT SEMICOLON  &kp SQT
+&kp GLOBE  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13       &kp F14       &kp F15    &kp F16                    &kp MINUS
                                &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp F17       &kp F18
                                                              &kp LEFT_SHIFT                                              &kp SLASH
                                                                              &kp LCMD  &none  &kp ESCAPE  &kp SPACE
@@ -103,10 +103,10 @@
 
         blue_win {
             bindings = <
-&none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0         &kp LEFT_CONTROL
-&kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P          &kp LEFT_BRACKET
-&to WIN_L1    &ht_tog BLUE_WIN A  &kp S           &kp D         &lt BLUE_WIN F  &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &kp SEMICOLON  &kp SQT
-&kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13       &kp F14       &kp F15    &kp F16        &kp MINUS
+&none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0                     &kp LEFT_CONTROL
+&kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P                      &kp LEFT_BRACKET
+&to WIN_L1    &ht_tog BLUE_WIN A  &kp S           &kp D         &lt BLUE_WIN F  &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp LEFT_ALT SEMICOLON  &kp SQT
+&kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13       &kp F14       &kp F15    &kp F16                    &kp MINUS
                                   &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp F17       &kp F18
                                                                 &kp LEFT_SHIFT                                              &kp SLASH
                                                                                 &kp LALT  &none  &kp ESCAPE  &kp SPACE
