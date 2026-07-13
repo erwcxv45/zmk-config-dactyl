@@ -41,7 +41,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";       // Ждем отпускания клавиши
             tapping-term-ms = <290>;        // Комфортное время для удержания
-            require-prior-idle-ms = <300>;  // Удержание сработает только если до этого была пауза в печати
+            require-prior-idle-ms = <400>;  // Удержание сработает только если до этого была пауза в печати
             bindings = <&tog>, <&kp>;
         };
 
@@ -50,7 +50,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <290>;
-            require-prior-idle-ms = <300>;
+            require-prior-idle-ms = <400>;
             bindings = <&kp>, <&kp>;
         };
     };
