@@ -3,7 +3,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-// Определяем константы для слоев, чтобы в них было легко ориентироваться
 #define MAC_BASE 0
 #define MAC_L1   1
 #define BLUE_MAC 2
@@ -32,33 +31,33 @@
 
         mac_base {
             bindings = <
-&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7     &kp N8            &kp N9             &kp N0         &kp LEFT_CONTROL
+&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7     &kp N8            &kp N9             &kp N0         &none
 &kp TAB    &kp Q              &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp U      &kp I             &kp O              &kp P          &to MAC_L1
 &kp LALT   &ht_tog BLUE_MAC A &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &kp J      &kp K             &kp L              &kp SEMICOLON  &kp SQT
 &kp GLOBE  &kp Z              &kp X           &kp C         &kp V           &kp B                        &kp N          &kp M      &kp COMMA         &kp DOT            &kp LEFT_ALT   &kp MINUS
                               &msc SCRL_DOWN  &msc SCRL_UP                                                                         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                             &kp LEFT_SHIFT                                              &kp SLASH
-                                                                            &kp LCMD  &none  &kp ESCAPE  &kp SPACE
-                                                                            &none     &none  &kp RET     &kp BACKSPACE
+                                                                            &kp LCMD   &kp LCTRL  &kp ESCAPE  &kp SPACE
+                                                                            &none      &none      &kp RET     &kp BACKSPACE
             >;
         };
 
         mac_l1 {
             bindings = <
-&kp F11    &kp F1             &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &kp LEFT_CONTROL
+&kp F11    &kp F1             &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &none
 &kp TAB    &kp HOME           &kp END         &kp PG_UP     &kp PG_DN       &kp INSERT                       &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9  &kp EQUAL     &to MAC_BASE
-&kp LALT   &ht_tog BLUE_MAC A &kp F6          &kp F7        &lt BLUE_MAC F  &mkp MB4                         &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
-&kp GLOBE  &mkp MB4           &mkp MB1        &mkp MB2      &mkp MB3        &kp B                            &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to WIN_L1    &bt BT_CLR_ALL
+&kp LALT   &ht_tog BLUE_MAC A &kp F6          &kp F7        &lt BLUE_MAC F  &kp LCTRL                        &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
+&kp GLOBE  &mkp MB4           &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB5                         &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to WIN_L1    &bt BT_CLR_ALL
                               &msc SCRL_DOWN  &msc SCRL_UP                                                                                &kp LEFT_BRACKET  &kp TILDE
                                                             &kp LEFT_SHIFT                                                  &kp SLASH
-                                                                            &kp LCMD      &trans  &kp ESC    &kp SPACE
-                                                                            &trans        &trans  &kp ENTER  &kp BACKSPACE
+                                                                            &kp LCMD   &kp LCTRL  &kp ESC    &kp SPACE
+                                                                            &trans     &trans     &kp ENTER  &kp BACKSPACE
             >;
         };
 
         blue_mac {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &trans    &trans          &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &trans    &trans          &trans     &none
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &trans    &kp UP_ARROW    &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &kp LEFT  &kp DOWN        &kp RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp F13  &kp F14   &kp F15         &kp F16    &trans
@@ -73,33 +72,33 @@
 
         win_base {
             bindings = <
-&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7     &kp N8            &kp N9             &kp N0         &kp LEFT_CONTROL
+&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7     &kp N8            &kp N9             &kp N0         &none
 &kp TAB    &kp Q              &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp U      &kp I             &kp O              &kp P          &to WIN_L1
 &kp LGUI   &ht_tog BLUE_WIN A &kp S           &kp D         &lt BLUE_WIN F  &kp G                        &kp H          &kp J      &kp K             &kp L              &kp SEMICOLON  &kp SQT
 &kp GLOBE  &kp Z              &kp X           &kp C         &kp V           &kp B                        &kp N          &kp M      &kp COMMA         &kp DOT            &kp LGUI       &kp MINUS
                               &msc SCRL_DOWN  &msc SCRL_UP                                                                         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                             &kp LEFT_SHIFT                                              &kp SLASH
-                                                                            &kp LALT  &none  &kp ESCAPE  &kp SPACE
-                                                                            &none     &none  &kp RET     &kp BACKSPACE
+                                                                            &kp LALT   &kp LCTRL  &kp ESCAPE  &kp SPACE
+                                                                            &none      &none      &kp RET     &kp BACKSPACE
             >;
         };
 
         win_l1 {
             bindings = <
-&kp F11    &kp F1             &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &kp LEFT_CONTROL
+&kp F11    &kp F1             &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &none
 &kp TAB    &kp HOME           &kp END         &kp PG_UP     &kp PG_DN       &kp INSERT                       &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9  &kp EQUAL     &to WIN_BASE
-&kp LGUI   &ht_tog BLUE_WIN A &kp F6          &kp F7        &lt BLUE_WIN F  &mkp MB4                         &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
-&kp GLOBE  &mkp MB4           &mkp MB1        &mkp MB2      &mkp MB3        &kp B                            &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to MAC_L1    &bt BT_CLR_ALL
+&kp LGUI   &ht_tog BLUE_WIN A &kp F6          &kp F7        &lt BLUE_WIN F  &kp LCTRL                        &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
+&kp GLOBE  &mkp MB4           &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB5                         &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to MAC_L1    &bt BT_CLR_ALL
                               &msc SCRL_DOWN  &msc SCRL_UP                                                                                &kp LEFT_BRACKET  &kp TILDE
                                                             &kp LEFT_SHIFT                                                  &kp SLASH
-                                                                            &kp LALT      &trans  &kp ESC    &kp SPACE
-                                                                            &trans        &trans  &kp ENTER  &kp BACKSPACE
+                                                                            &kp LALT   &kp LCTRL  &kp ESC    &kp SPACE
+                                                                            &trans     &trans     &kp ENTER  &kp BACKSPACE
             >;
         };
 
         blue_win {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &trans    &trans          &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &trans    &trans          &trans     &none
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &trans    &kp UP_ARROW    &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &trans   &kp LEFT  &kp DOWN        &kp RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans                  &trans  &kp F13  &kp F14   &kp F15         &kp F16    &trans
