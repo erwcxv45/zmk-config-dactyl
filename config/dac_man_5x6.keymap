@@ -12,9 +12,6 @@
 
 / {
     behaviors {
-        // Кастомное поведение для "крестика"
-        // Tap: Печатает символ
-        // Hold: Аппаратно переключает (toggle) указанный слой до повторного удержания
         ht_tog: hold_tap_toggle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -46,7 +43,7 @@
             bindings = <
 &none      &kp F1             &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &none
 &kp TAB    &kp LCTRL          &kp HOME        &kp END       &kp PG_UP       &kp PG_DN                        &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9  &kp EQUAL     &to MAC_BASE
-&kp LALT   &ht_tog BLUE_MAC A &kp S           &kp D         &lt BLUE_MAC F  &kp G                            &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
+&kp LALT   &ht_tog BLUE_MAC A &kp S           &kp D         &lt BLUE_MAC F  &kp INSERT                       &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
 &kp GLOBE  &mkp MB4           &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB5                         &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to WIN_L1    &bt BT_CLR_ALL
                               &msc SCRL_DOWN  &msc SCRL_UP                                                                                &kp LEFT_BRACKET  &kp TILDE
                                                             &kp LEFT_SHIFT                                                  &kp SLASH
@@ -56,16 +53,15 @@
         };
 
         blue_mac {
-            // Идентичен MAC_BASE, кроме стрелок, F13-F16 и переключения рабочих столов на тамбах
             bindings = <
-&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7     &kp N8            &kp N9             &kp N0         &none
-&kp TAB    &kp Q              &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp U      &kp I             &kp UP_ARROW       &kp P          &to MAC_L1
-&kp LALT   &ht_tog BLUE_MAC A &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &kp J      &kp LEFT          &kp DOWN           &kp RIGHT      &kp SQT
+&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP &kp N8            &kp N9             &kp N0         &none
+&kp TAB    &kp Q              &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN &kp UP_ARROW      &kp O              &kp P          &to MAC_L1
+&kp LALT   &ht_tog BLUE_MAC A &kp S           &kp D         &lt BLUE_MAC F  &kp G                        &kp H          &kp LEFT     &kp DOWN          &kp RIGHT          &kp SEMICOLON  &kp SQT
 &kp GLOBE  &kp Z              &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13    &kp F14           &kp F15            &kp F16        &kp MINUS
-                              &msc SCRL_DOWN  &msc SCRL_UP                                                                         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                              &msc SCRL_DOWN  &msc SCRL_UP                                                                         &kp F17           &kp F18
                                                             &kp LEFT_SHIFT                                              &kp SLASH
-                                                                            &kp LCMD  &none  &kp ESCAPE   &kp SPACE
-                                                                            &none     &none  &kp LC(LEFT) &kp LC(RIGHT)
+                                                                            &kp LCMD  &none  &kp ESCAPE  &kp SPACE
+                                                                            &none     &none  &kp RET     &kp BACKSPACE
             >;
         };
 
@@ -88,7 +84,7 @@
             bindings = <
 &none      &kp F1             &kp F2          &kp F3        &kp F4          &kp F5                           &kp MINUS      &kp EQUAL     &kp SLASH         &kp ASTERISK  &kp EQUAL     &none
 &kp TAB    &kp LCTRL          &kp HOME        &kp END       &kp PG_UP       &kp PG_DN                        &bt BT_SEL 0   &kp NUMBER_7  &kp NUMBER_8      &kp NUMBER_9  &kp EQUAL     &to WIN_BASE
-&kp LGUI   &ht_tog BLUE_WIN A &kp S           &kp D         &lt BLUE_WIN F  &kp G                            &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
+&kp LGUI   &ht_tog BLUE_WIN A &kp S           &kp D         &lt BLUE_WIN F  &kp INSERT                       &bt BT_SEL 1   &kp NUMBER_4  &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_0  &bt BT_CLR
 &kp GLOBE  &mkp MB4           &mkp MB1        &mkp MB2      &mkp MB3        &mkp MB5                         &bt BT_SEL 2   &kp NUMBER_1  &kp NUMBER_2      &kp NUMBER_3  &to MAC_L1    &bt BT_CLR_ALL
                               &msc SCRL_DOWN  &msc SCRL_UP                                                                                &kp LEFT_BRACKET  &kp TILDE
                                                             &kp LEFT_SHIFT                                                  &kp SLASH
@@ -98,16 +94,15 @@
         };
 
         blue_win {
-            // Идентичен WIN_BASE, кроме стрелок, F13-F16 и переключения рабочих столов на тамбах
             bindings = <
-&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7     &kp N8            &kp N9             &kp N0         &none
-&kp TAB    &kp Q              &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp U      &kp I             &kp UP_ARROW       &kp P          &to WIN_L1
-&kp LGUI   &ht_tog BLUE_WIN A &kp S           &kp D         &lt BLUE_WIN F  &kp G                        &kp H          &kp J      &kp LEFT          &kp DOWN           &kp RIGHT      &kp SQT
+&none      &kp N1             &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP &kp N8            &kp N9             &kp N0         &none
+&kp TAB    &kp Q              &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN &kp UP_ARROW      &kp O              &kp P          &to WIN_L1
+&kp LGUI   &ht_tog BLUE_WIN A &kp S           &kp D         &lt BLUE_WIN F  &kp G                        &kp H          &kp LEFT     &kp DOWN          &kp RIGHT          &kp SEMICOLON  &kp SQT
 &kp GLOBE  &kp Z              &kp X           &kp C         &kp V           &kp B                        &kp N          &kp F13    &kp F14           &kp F15            &kp F16        &kp MINUS
-                              &msc SCRL_DOWN  &msc SCRL_UP                                                                         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                              &msc SCRL_DOWN  &msc SCRL_UP                                                                         &kp F17           &kp F18
                                                             &kp LEFT_SHIFT                                              &kp SLASH
-                                                                            &kp LALT  &none  &kp ESCAPE       &kp SPACE
-                                                                            &none     &none  &kp LC(LG(LEFT)) &kp LC(LG(RIGHT))
+                                                                            &kp LALT  &none  &kp ESCAPE  &kp SPACE
+                                                                            &none     &none  &kp RET     &kp BACKSPACE
             >;
         };
     };
