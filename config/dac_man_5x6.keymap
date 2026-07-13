@@ -1,79 +1,171 @@
-#include <behaviors.dtsi>
+ #include <behaviors.dtsi>
+
 #include <dt-bindings/zmk/bt.h>
+
 #include <dt-bindings/zmk/keys.h>
+
 #include <dt-bindings/zmk/pointing.h>
 
-#define MAC_BASE 0
-#define WIN_BASE 1
-#define BLUE_L   2
-#define L1_L     3
+
+#define DEFAULT 0
+
+#define RAISE 1
+
+#define LOWER 2
+
 
 / {
-    behaviors {
-        // Кастомное поведение для "крестика"
-        // Обычное нажатие выдает букву, долгое зажатие (200ms) переключает слой
-        ht_tog: hold_tap_toggle {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&tog>, <&kp>;
-        };
-    };
 
-    keymap {
-        compatible = "zmk,keymap";
+keymap {
 
-        mac_base {
-            // Layer 0: MAC_BASE (Твой чертеж l0)
-            bindings = <
-&none     &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp LCTRL
-&kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T                          &kp C_VOL_UP &kp C_VOL_DN &kp I  &kp O  &to L1_L &kp LBKT
-&kp LALT  &kp A  &ht_tog BLUE_L S &kp D &lt BLUE_L F &kp G           &kp H  &kp J  &kp K  &kp L  &kp SEMI &kp SQT
-&kp LGUI  &mt LALT Z &mt F20 X &kp C  &kp V  &kp B                   &kp N  &kp M  &kp COMMA &kp DOT &kp SLASH &kp MINUS
-                     &msc SCRL_DOWN &msc SCRL_UP                                          &kp LEFT &kp RIGHT
-                                    &kp LSHIFT                                            &kp SLASH
-                                    &kp DEL &none &kp ESC &kp SPACE        &none &none &kp RET &kp BSPC
-            >;
-        };
+compatible = "zmk,keymap";
 
-        win_base {
-            // Layer 1: WIN_BASE (Переключается через W/A, инвертированы GUI и CTRL)
-            bindings = <
-&none     &kp N1 &kp N2 &kp N3 &kp N4 &kp N5                         &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp LGUI
-&kp TAB   &kp Q  &kp W  &kp E  &kp R  &kp T                          &kp C_VOL_UP &kp C_VOL_DN &kp I  &kp O  &to L1_L &kp LBKT
-&kp LCTRL &kp A  &ht_tog BLUE_L S &kp D &lt BLUE_L F &kp G           &kp H  &kp J  &kp K  &kp L  &kp SEMI &kp SQT
-&kp LALT  &mt LALT Z &mt F20 X &kp C  &kp V  &kp B                   &kp N  &kp M  &kp COMMA &kp DOT &kp SLASH &kp MINUS
-                     &msc SCRL_DOWN &msc SCRL_UP                                          &kp LEFT &kp RIGHT
-                                    &kp LSHIFT                                            &kp SLASH
-                                    &kp DEL &none &kp ESC &kp SPACE        &none &none &kp RET &kp BSPC
-            >;
-        };
 
-        blue_layer {
-            // Layer 2: BLUE_L (Активируется зажатием S или F на l0, либо A или F на l1)
-            bindings = <
-&trans &trans &trans &trans &trans &trans                            &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans                            &trans &trans &trans &kp UP &trans &trans
-&trans &trans &trans &trans &trans &trans                            &trans &trans &kp LEFT &kp DOWN &kp RIGHT &trans
-&trans &trans &trans &trans &trans &trans                            &trans &kp F13 &kp F14 &kp F15 &kp F16 &trans
-              &trans &trans                                                               &trans &trans
-                     &trans                                                               &trans
-                     &trans &trans &trans &kp LC(LEFT)                      &trans &trans &kp LC(RIGHT) &trans
-            >;
-        };
+default_layer {
 
-        l1_layer {
-            // Layer 3: L1_L (Твой верхний чертеж l1)
-            bindings = <
-&trans &trans &trans &trans &trans &trans                            &trans &kp SLASH &kp DOT &kp MINUS &kp EQUAL &trans
-&trans &trans &kp HOME &kp END &trans &trans                         &trans &kp PLUS &kp PLUS &to MAC_BASE &trans &trans
-&trans &ht_tog BLUE_L A &kp PG_UP &kp PG_DN &lt BLUE_L F &trans      &trans &kp N0 &bt BT_CLR &bt BT_CLR_ALL &trans &trans
-&trans &mkp MB4 &mkp MB1 &mkp MB2 &mkp MB3 &trans                    &trans &tog WIN_BASE &bt BT_CLR_ALL &trans &trans &trans
-              &trans &trans                                                               &trans &trans
-                     &trans                                                               &trans
-                     &trans &trans &trans &trans                            &trans &trans &trans &trans
-            >;
-        };
-    };
+// Commented layout is not actual layout.
+
+// -------------------------------------------------------------------------------------------------------------------------
+
+// | ESC | 1 | 2 | 3 | 4 | 5 | | 6 | 7 | 8 | 9 | 0 | BSPC |
+
+// | TAB | Q | W | E | R | T | | Y | U | I | O | P | \ |
+
+// | LALT | A | S | D | F | G | | H | J | K | L | ; | ' |
+
+// | LCTRL | Z | X | C | V | B | | N | M | , | . | / | RALT |
+
+// | [ | ] | | - | = |
+
+// | MO lay 1| SPACE | | ENTER | MO lay 2|
+
+// | TAB | HOME | END | DEL |
+
+// | Raise | ~ | GUI | Lower |
+
+
+bindings = <
+
+&none &kp N1 &kp N2 &kp N3 &kp N4 &kp N5 &kp N6 &kp N7 &kp N8 &kp N9 &kp N0 &kp LEFT_CONTROL
+
+&kp TAB &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp LEFT_BRACKET
+
+&to 1 &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMICOLON &kp SQT
+
+&kp LEFT_GUI &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp LEFT_ALT &kp MINUS
+
+&msc SCRL_DOWN &msc SCRL_UP &kp LEFT &kp RIGHT
+
+&kp LEFT_SHIFT &kp SLASH
+
+&kp DEL &none &kp ESCAPE &kp SPACE
+
+&none &none &kp RET &kp BACKSPACE
+
+>;
+
 };
+
+
+mine {
+
+bindings = <
+
+&kp F11 &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp MINUS &kp EQUAL &kp SLASH &kp ASTERISK &kp GRAVE &kp LEFT_CONTROL
+
+&kp F12 &kp F6 &kp F7 &kp F8 &kp F9 &kp F10 &bt BT_SEL 0 &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp NUMBER_0 &bt BT_CLR_ALL
+
+&to 0 &mkp MB4 &mkp MB1 &mkp MB2 &mkp MB3 &mkp MB4 &bt BT_SEL 1 &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &bt BT_CLR
+
+&kp LEFT_GUI &kp Z &kp X &kp C &kp V &kp B &bt BT_SEL 2 &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp NUMBER_0 &kp RIGHT_BRACKET
+
+&msc SCRL_DOWN &msc SCRL_UP &kp UP_ARROW &kp DOWN_ARROW
+
+&kp LEFT_SHIFT &kp SLASH
+
+&kp CAPSLOCK &trans &kp ESC &kp SPACE
+
+&trans &trans &kp ENTER &kp BACKSPACE
+
+>;
+
+};
+
+
+layer_2 {
+
+bindings = <
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans
+
+&trans &trans
+
+&trans &trans &trans &trans
+
+&trans &trans &trans &trans
+
+>;
+
+};
+
+
+layer_3 {
+
+bindings = <
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans
+
+&trans &trans
+
+&trans &trans &trans &trans
+
+&trans &trans &trans &trans
+
+>;
+
+};
+
+
+layer_4 {
+
+bindings = <
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+
+&trans &trans &trans &trans
+
+&trans &trans
+
+&trans &trans &trans &trans
+
+&trans &trans &trans &trans
+
+>;
+
+};
+
+};
+
+}; 
