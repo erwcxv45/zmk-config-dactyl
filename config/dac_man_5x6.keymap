@@ -112,7 +112,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // Специальный hold-tap для слоя ZONES (на клавише L) с теми же таймингами
         lt_kp: layer_tap_key {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -122,19 +121,19 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // Специальный hold-tap для F-слоя на `/` (удлиненный тайминг)
         lt_long: layer_tap_long {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <500>; // "больше чем обычное"
+            tapping-term-ms = <500>;
             require-prior-idle-ms = <350>;
             bindings = <&mo>, <&kp>;
         };
 
+        // ИСПРАВЛЕННЫЕ HOLD-TAP: макрос (0) + kp (1) = 1 аргумент
         ht_f_mac: ht_f_mac {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <300>;
             require-prior-idle-ms = <350>;
@@ -143,7 +142,7 @@
 
         ht_f_win: ht_f_win {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <300>;
             require-prior-idle-ms = <350>;
@@ -168,29 +167,29 @@
             bindings = <&kp>, <&mkp>;
         };
 
-        // ИСПРАВЛЕННЫЕ Bluetooth-команды. Теперь они статичны, т.к. макрос без аргументов не может миксоваться с kp.
-        ht_bt0_y: ht_bt0_y {
+        // ИСПРАВЛЕННЫЕ BLUETOOTH HOLD-TAP: макрос (0) + kp (1) = 1 аргумент
+        ht_bt0: ht_bt0 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
-            bindings = <&bt_0>, <&kp Y>;
+            bindings = <&bt_0>, <&kp>;
         };
 
-        ht_bt1_h: ht_bt1_h {
+        ht_bt1: ht_bt1 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
-            bindings = <&bt_1>, <&kp H>;
+            bindings = <&bt_1>, <&kp>;
         };
 
-        ht_bt2_n: ht_bt2_n {
+        ht_bt2: ht_bt2 {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             flavor = "tap-preferred";
             tapping-term-ms = <500>;
-            bindings = <&bt_2>, <&kp N>;
+            bindings = <&bt_2>, <&kp>;
         };
     };
 
@@ -203,7 +202,7 @@
             bindings = <
 &none       &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp N7          &kp N8            &kp N9             &kp N0               &kp LEFT_COMMAND
 &kp TAB     &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp U           &kp I             &kp O              &kp P                &kp LEFT_BRACKET
-&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D         &ht_f_mac 0 F   &kp G                        &kp H          &ht_kp LCTRL J  &ht_kp INSERT K   &lt_kp MAC_ZONES L &ht_kp F3 SEMICOLON  &kp SQT
+&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D         &ht_f_mac F     &kp G                        &kp H          &ht_kp LCTRL J  &ht_kp INSERT K   &lt_kp MAC_ZONES L &ht_kp F3 SEMICOLON  &kp SQT
 &kp GLOBE   &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp N          &kp M           &kp COMMA         &ht_kp END DOT     &kp LEFT_ALT         &kp MINUS
                                 &msc SCRL_DOWN  &msc SCRL_UP                                                                              &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                               &kp LEFT_SHIFT                                              &lt_long F_KEYS SLASH
@@ -215,9 +214,9 @@
         mac_l1 {
             bindings = <
 &none         &kp F5              &kp F8            &kp F9            &kp F10           &kp F12                                &kp MINUS      &kp EQUAL                 &kp SLASH                  &kp ASTERISK            &kp EQUAL              &kp LEFT_COMMAND
-&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &ht_bt0_y      &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
-&to_mac_base  &ht_tog BLUE_MAC A  &kp S             &kp D             &ht_f_mac 0 F     &ht_l1_kp G INSERT                     &ht_bt1_h      &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
-&kp GLOBE     &kp Z               &kp X             &kp C             &kp V             &kp B                                  &ht_bt2_n      &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_win_l1             &bt BT_CLR_ALL
+&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &ht_bt0 Y      &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
+&to_mac_base  &ht_tog BLUE_MAC A  &kp S             &kp D             &ht_f_mac F       &ht_l1_kp G INSERT                     &ht_bt1 H      &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
+&kp GLOBE     &kp Z               &kp X             &kp C             &kp V             &kp B                                  &ht_bt2 N      &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_win_l1             &bt BT_CLR_ALL
                                   &msc SCRL_DOWN    &msc SCRL_UP                                                                                                        &kp LEFT_BRACKET           &kp TILDE
                                                                       &kp LEFT_SHIFT                                                          &kp SLASH
                                                                                         &kp LCMD            &trans  &kp ESC    &kp SPACE
@@ -229,7 +228,7 @@
             bindings = <
 &none       &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0               &kp LEFT_COMMAND
 &kp TAB     &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P                &kp LEFT_BRACKET
-&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D         &ht_f_mac 0 F   &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp F3 SEMICOLON  &kp SQT
+&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D         &ht_f_mac F     &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp F3 SEMICOLON  &kp SQT
 &kp GLOBE   &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp F16        &kp F13       &kp F14       &kp F15    &kp LEFT_ALT         &kp MINUS
                                 &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp F17       &kp F18
                                                               &kp LEFT_SHIFT                                              &kp SLASH
@@ -244,7 +243,7 @@
             bindings = <
 &none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                               &kp N6         &kp N7          &kp N8            &kp N9             &kp N0               &kp LEFT_CONTROL
 &kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                                &kp Y          &kp U           &kp I             &kp O              &kp P                &kp LEFT_BRACKET
-&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D         &ht_f_win 0 F   &kp G                                &kp H          &ht_kp LCTRL J  &ht_kp INSERT K   &lt_kp WIN_ZONES L &ht_kp F3 SEMICOLON  &kp SQT
+&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D         &ht_f_win F     &kp G                                &kp H          &ht_kp LCTRL J  &ht_kp INSERT K   &lt_kp WIN_ZONES L &ht_kp F3 SEMICOLON  &kp SQT
 &kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                                &kp N          &kp M           &kp COMMA         &ht_kp END DOT     &kp LEFT_ALT         &kp MINUS
                                   &msc SCRL_DOWN  &msc SCRL_UP                                                                                      &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                                 &kp LEFT_SHIFT                                                      &lt_long F_KEYS SLASH
@@ -256,9 +255,9 @@
         win_l1 {
             bindings = <
 &none         &kp F5              &kp F8            &kp F9            &kp F10           &kp F12                                &kp MINUS      &kp EQUAL                 &kp SLASH                  &kp ASTERISK            &kp EQUAL              &kp LEFT_CONTROL
-&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &ht_bt0_y      &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
-&to_win_base  &ht_tog BLUE_WIN A  &kp S             &kp D             &ht_f_win 0 F     &ht_l1_kp G INSERT                     &ht_bt1_h      &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
-&kp LEFT_WIN  &kp Z               &kp X             &kp C             &kp V             &kp B                                  &ht_bt2_n      &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_mac_l1             &bt BT_CLR_ALL
+&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &ht_bt0 Y      &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
+&to_win_base  &ht_tog BLUE_WIN A  &kp S             &kp D             &ht_f_win F       &ht_l1_kp G INSERT                     &ht_bt1 H      &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
+&kp LEFT_WIN  &kp Z               &kp X             &kp C             &kp V             &kp B                                  &ht_bt2 N      &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_mac_l1             &bt BT_CLR_ALL
                                   &msc SCRL_DOWN    &msc SCRL_UP                                                                                                        &kp LEFT_BRACKET           &kp TILDE
                                                                       &kp LEFT_SHIFT                                                          &kp SLASH
                                                                                         &kp LEFT_CONTROL    &trans  &kp ESC    &kp SPACE
@@ -270,7 +269,7 @@
             bindings = <
 &none         &kp N1              &kp N2          &kp N3        &kp N4          &kp N5                       &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0               &kp LEFT_CONTROL
 &kp TAB       &kp Q               &kp W           &kp E         &kp R           &kp T                        &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P                &kp LEFT_BRACKET
-&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D         &ht_f_win 0 F   &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp F3 SEMICOLON  &kp SQT
+&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D         &ht_f_win F     &kp G                        &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp F3 SEMICOLON  &kp SQT
 &kp LEFT_WIN  &kp Z               &kp X           &kp C         &kp V           &kp B                        &kp F16        &kp F13       &kp F14       &kp F15    &kp LEFT_ALT         &kp MINUS
                                   &msc SCRL_DOWN  &msc SCRL_UP                                                                            &kp F17       &kp F18
                                                                 &kp LEFT_SHIFT                                              &kp SLASH
