@@ -14,7 +14,6 @@
 #define F_KEYS    8
 
 // Создаем сокращение для Hyper-ключа (Shift + Ctrl + Alt + Gui)
-// Это самая "безопасная" комбинация, которая не конфликтует с обычными программами
 #define HYP(key) LS(LC(LA(LG(key))))
 
 / {
@@ -44,7 +43,7 @@
         };
 
         // Макросы для зажатия F: активация слоя + удержание F23
-        // Делаем #binding-cells = <1>, чтобы hold-tap мог передать фиктивный аргумент
+        // #binding-cells = <1> нужен для корректной работы с hold-tap
         f23_mac_layer: f23_mac_layer {
             compatible = "zmk,behavior-macro";
             #binding-cells = <1>;
@@ -65,32 +64,6 @@
                 <&macro_press>, <&mo BLUE_WIN>, <&kp F23>,
                 <&macro_pause_for_release>,
                 <&macro_release>, <&mo BLUE_WIN>, <&kp F23>;
-        };
-
-        // Изолированные макросы для Bluetooth команд
-        // Аналогично, делаем #binding-cells = <1> для фиктивного аргумента
-        bt_0: bt_0 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&bt BT_SEL 0>;
-        };
-
-        bt_1: bt_1 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&bt BT_SEL 1>;
-        };
-
-        bt_2: bt_2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <1>;
-            wait-ms = <0>;
-            tap-ms = <0>;
-            bindings = <&bt BT_SEL 2>;
         };
     };
 
@@ -131,7 +104,6 @@
             bindings = <&mo>, <&kp>;
         };
 
-        // Теперь компилятор будет доволен, так как #binding-cells = <2>
         ht_f_mac: ht_f_mac {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -167,31 +139,6 @@
             require-prior-idle-ms = <150>;
             bindings = <&kp>, <&mkp>;
         };
-
-        // Bluetooth-команды. При удержании - кнопка (передается первый параметр), при тапе - макрос (второй)
-        ht_bt0: ht_bt0 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <500>;
-            bindings = <&kp>, <&bt_0>;
-        };
-
-        ht_bt1: ht_bt1 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <500>;
-            bindings = <&kp>, <&bt_1>;
-        };
-
-        ht_bt2: ht_bt2 {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <500>;
-            bindings = <&kp>, <&bt_2>;
-        };
     };
 
     keymap {
@@ -215,9 +162,9 @@
         mac_l1 {
             bindings = <
 &none         &kp F5              &kp F8            &kp F9            &kp F10           &kp F12                                &kp MINUS      &kp EQUAL                 &kp SLASH                  &kp ASTERISK            &kp EQUAL              &kp LEFT_COMMAND
-&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &ht_bt0 Y 0    &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
-&to_mac_base  &ht_tog BLUE_MAC A  &kp S             &kp D             &ht_f_mac 0 F     &ht_l1_kp G INSERT                     &ht_bt1 H 0    &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
-&kp GLOBE     &kp Z               &kp X             &kp C             &kp V             &kp B                                  &ht_bt2 N 0    &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_win_l1             &bt BT_CLR_ALL
+&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &bt BT_SEL 0   &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
+&to_mac_base  &ht_tog BLUE_MAC A  &kp S             &kp D             &ht_f_mac 0 F     &ht_l1_kp G INSERT                     &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
+&kp GLOBE     &kp Z               &kp X             &kp C             &kp V             &kp B                                  &bt BT_SEL 2   &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_win_l1             &bt BT_CLR_ALL
                                   &msc SCRL_DOWN    &msc SCRL_UP                                                                                                        &kp LEFT_BRACKET           &kp TILDE
                                                                       &kp LEFT_SHIFT                                                          &kp SLASH
                                                                                         &kp LCMD            &trans  &kp ESC    &kp SPACE
@@ -256,9 +203,9 @@
         win_l1 {
             bindings = <
 &none         &kp F5              &kp F8            &kp F9            &kp F10           &kp F12                                &kp MINUS      &kp EQUAL                 &kp SLASH                  &kp ASTERISK            &kp EQUAL              &kp LEFT_CONTROL
-&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &ht_bt0 Y 0    &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
-&to_win_base  &ht_tog BLUE_WIN A  &kp S             &kp D             &ht_f_win 0 F     &ht_l1_kp G INSERT                     &ht_bt1 H 0    &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
-&kp LEFT_WIN  &kp Z               &kp X             &kp C             &kp V             &kp B                                  &ht_bt2 N 0    &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_mac_l1             &bt BT_CLR_ALL
+&kp TAB       &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                       &bt BT_SEL 0   &ht_l1_kp U NUMBER_7      &ht_l1_kp I NUMBER_8       &ht_l1_kp O NUMBER_9    &ht_l1_kp P EQUAL      &kp F11
+&to_win_base  &ht_tog BLUE_WIN A  &kp S             &kp D             &ht_f_win 0 F     &ht_l1_kp G INSERT                     &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4  &ht_l1_kp INSERT NUMBER_5  &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
+&kp LEFT_WIN  &kp Z               &kp X             &kp C             &kp V             &kp B                                  &bt BT_SEL 2   &ht_l1_kp M NUMBER_1      &ht_l1_kp COMMA NUMBER_2   &ht_l1_kp DOT NUMBER_3  &to_mac_l1             &bt BT_CLR_ALL
                                   &msc SCRL_DOWN    &msc SCRL_UP                                                                                                        &kp LEFT_BRACKET           &kp TILDE
                                                                       &kp LEFT_SHIFT                                                          &kp SLASH
                                                                                         &kp LEFT_CONTROL    &trans  &kp ESC    &kp SPACE
@@ -280,7 +227,6 @@
         };
 
         // ================= MONITOR ZONES =================
-        // Используем сверх-уникальный хоткей HYP: Shift + Ctrl + Alt + Cmd/Win
 
         mac_zones {
             bindings = <
