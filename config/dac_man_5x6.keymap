@@ -160,7 +160,7 @@
 &none       &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                         &kp N6         &kp N7         &kp N8          &kp N9            &kp N0               &kp LGUI
 &kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                          &kp Y          &kp U          &kp I           &kp O             &kp P                &kp LEFT_BRACKET
 &to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                          &kp H          &ht_kp LCTRL J &ht_kp INSERT K &lt_kp MAC_ZONES L &ht_kp F3 SEMICOLON &kp SQT
-&ht_globe GLOBE HYP(SPACE) &kp Z &kp X          &kp C           &kp V         &kp B                                                          &kp N          &kp M          &kp COMMA       &ht_kp END DOT    &kp LALT             &kp MINUS
+&ht_globe HYP(N0) HYP(SPACE) &kp Z &kp X        &kp C           &kp V         &kp B                                                          &kp N          &kp M          &kp COMMA       &ht_kp END DOT    &kp LALT             &kp MINUS
                                 &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                               &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                                 &kp LSHIFT                                                                                                                 &lt_long MAC_F_KEYS SLASH
                                                                               &kp LGUI  &none  &kp ESCAPE  &kp SPACE
@@ -173,7 +173,7 @@
 &none        &kp F5              &kp F8            &kp F9            &kp F10           &kp F12                                                        &kp MINUS      &kp EQUAL      &kp SLASH         &kp ASTERISK      &kp EQUAL              &trans
 &kp TAB      &ht_l1_mkp Q MB4    &ht_l1_mkp W MB1  &ht_l1_mkp E MB2  &ht_l1_mkp R MB3  &ht_l1_mkp T MB5                                               &bt BT_SEL 0   &ht_l1_kp U NUMBER_7 &ht_l1_kp I NUMBER_8 &ht_l1_kp O NUMBER_9 &ht_l1_kp P EQUAL      &kp F11
 &to_mac_base &ht_tog BLUE_MAC A  &kp S             &kp D             &ht_f_mac 0 F     &ht_l1_kp G INSERT                                             &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4 &ht_l1_kp INSERT NUMBER_5 &ht_l1_kp END NUMBER_6  &ht_l1_kp F3 NUMBER_0  &bt BT_CLR
-&ht_globe GLOBE HYP(SPACE) &kp Z &kp X             &kp C             &kp V             &kp B                                                          &bt BT_SEL 2   &ht_l1_kp M NUMBER_1 &ht_l1_kp COMMA NUMBER_2 &ht_l1_kp DOT NUMBER_3  &to_win_l1             &bt BT_CLR_ALL
+&ht_globe HYP(N0) HYP(SPACE) &kp Z &kp X           &kp C             &kp V             &kp B                                                          &bt BT_SEL 2   &ht_l1_kp M NUMBER_1 &ht_l1_kp COMMA NUMBER_2 &ht_l1_kp DOT NUMBER_3  &to_win_l1             &bt BT_CLR_ALL
                                 &msc SCRL_DOWN    &msc SCRL_UP                                                                                                                               &kp LEFT_BRACKET        &kp TILDE
                                                                     &trans                                                                                                                   &kp SLASH
                                                                                       &trans              &trans  &kp ESC    &kp SPACE
@@ -186,7 +186,7 @@
 &none       &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                         &kp N6         &kp C_VOL_UP  &kp N8        &kp N9     &kp N0               &trans
 &kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                          &kp Y          &kp C_VOL_DN  &kp UP_ARROW  &kp O      &kp P                &kp LEFT_BRACKET
 &to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                          &kp H          &kp LEFT      &kp DOWN      &kp RIGHT  &ht_kp F3 SEMICOLON  &kp SQT
-&ht_globe GLOBE HYP(SPACE) &kp Z &kp X          &kp C           &kp V         &kp B                                                          &kp F16        &kp F13       &kp F14       &kp F15    &trans               &kp MINUS
+&ht_globe HYP(N0) HYP(SPACE) &kp Z &kp X        &kp C           &kp V         &kp B                                                          &kp F16        &kp F13       &kp F14       &kp F15    &trans               &kp MINUS
                                 &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                            &kp F17    &kp F18
                                                                 &trans                                                                                                                  &kp SLASH
                                                                               &trans    &none  &kp ESCAPE  &kp SPACE
@@ -270,7 +270,7 @@
 &none       &kp F1              &kp F2          &kp F3          &kp F4        &kp F5                                                         &kp F6         &kp F7         &kp F8          &kp F9            &kp F10              &kp LGUI
 &kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                          &kp Y          &kp U          &kp I           &kp O             &kp P                &kp LEFT_BRACKET
 &to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                          &kp H          &ht_kp LCTRL J &ht_kp INSERT K &lt_kp MAC_ZONES L &ht_kp F3 SEMICOLON &kp SQT
-&ht_globe GLOBE HYP(SPACE) &kp Z &kp X          &kp C           &kp V         &kp B                                                          &kp N          &kp M          &kp COMMA       &ht_kp END DOT    &kp LALT             &kp MINUS
+&ht_globe HYP(N0) HYP(SPACE) &kp Z &kp X        &kp C           &kp V         &kp B                                                          &kp N          &kp M          &kp COMMA       &ht_kp END DOT    &kp LALT             &kp MINUS
                                 &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                               &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                                                 &kp LSHIFT                                                                                                                 &trans
                                                                               &kp LGUI  &none  &kp ESCAPE  &kp SPACE
