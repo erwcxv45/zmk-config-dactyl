@@ -231,11 +231,11 @@
 
         mac_zones {
             bindings = <
-&none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans &trans &trans    &trans &trans &trans
-&trans  &kp CC(Q) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &trans &trans &trans    &trans &trans &trans
-&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans &trans &kp CC(L) &trans &trans &trans
-&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans &trans &trans    &trans &trans &trans
-                  &trans    &trans                                         &kp CC(LEFT_BRACKET) &kp CC(RIGHT_BRACKET)
+&none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans &trans &trans                 &trans                  &trans &trans
+&trans  &kp CC(Q) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &trans &trans &trans                 &trans                  &trans &trans
+&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans &trans &kp CC(L)              &trans                  &trans &trans
+&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans &trans &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)   &trans &trans
+                  &trans    &trans                                         &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)
                             &kp LSHIFT                              &trans
                                       &trans &trans &trans &kp LALT
                                       &trans &trans &trans &trans
@@ -244,11 +244,11 @@
 
         win_zones {
             bindings = <
-&none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans &trans &trans    &trans &trans &trans
-&trans  &kp CC(Q) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &trans &trans &trans    &trans &trans &trans
-&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans &trans &kp CC(L) &trans &trans &trans
-&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans &trans &trans    &trans &trans &trans
-                  &trans    &trans                                         &kp CC(LEFT_BRACKET) &kp CC(RIGHT_BRACKET)
+&none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans &trans &trans                 &trans                  &trans &trans
+&trans  &kp CC(Q) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &trans &trans &trans                 &trans                  &trans &trans
+&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans &trans &kp CC(L)              &trans                  &trans &trans
+&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans &trans &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)   &trans &trans
+                  &trans    &trans                                         &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)
                             &kp LSHIFT                              &trans
                                       &trans &trans &trans &kp LALT
                                       &trans &trans &trans &trans
