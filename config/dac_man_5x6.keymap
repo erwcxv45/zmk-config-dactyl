@@ -149,40 +149,40 @@
 
         mac_base {
             bindings = <
-&none       &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                   &kp N6         &kp N7         &kp N8          &kp N9             &kp N0                     &kp LGUI
-&kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
-&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp MAC_ZONES SEMICOLON &kp SQT
-&kp F24     &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
-                                &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
-                                                                &kp LSHIFT                                                                                                                                                                                         &lt_long MAC_F_KEYS SLASH
-                                                                                            &kp LGUI  &none  &kp ESCAPE  &kp SPACE
-                                                                                            &none     &none  &kp RET     &kp BACKSPACE
+&none       &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                                   &kp N6         &kp N7         &kp N8          &kp N9             &kp N0                     &kp LGUI
+&kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
+&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp MAC_ZONES SEMICOLON &kp SQT
+&kp F24     &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
+                                &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
+                                                                &kp LSHIFT                                                                                                                                                                              &lt_long MAC_F_KEYS SLASH
+                                                                                                        &kp LGUI  &none  &kp ESCAPE  &kp SPACE
+                                                                                                        &none     &none  &kp RET     &kp BACKSPACE
             >;
         };
 
         mac_l1 {
             bindings = <
-&none        &kp F5             &kp F8           &kp F9           &kp F10          &kp F12                                                                                 &kp MINUS      &kp EQUAL            &kp SLASH            &kp ASTERISK          &kp EQUAL              &trans
-&kp TAB      &ht_l1_mkp Q MB4   &ht_l1_mkp W MB1 &ht_l1_mkp E MB2 &ht_l1_mkp R MB3 &ht_l1_mkp T MB5                                                                        &bt BT_SEL 0   &ht_l1_kp U NUMBER_7 &ht_l1_kp I NUMBER_8 &ht_l1_kp O NUMBER_9  &ht_l1_kp P EQUAL      &kp F11
-&to_mac_base &ht_tog BLUE_MAC A &kp S            &kp D            &ht_f_mac 0 F    &ht_l1_kp G INSERT                                                                      &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4 &ht_l1_kp INSERT NUMBER_5 &ht_l1_kp F3 NUMBER_6 &ht_l1_kp END NUMBER_0 &bt BT_CLR
-&kp F24      &kp Z              &kp X            &kp C            &kp V            &kp B                                                                                   &bt BT_SEL 2   &ht_l1_kp M NUMBER_1 &ht_l1_kp COMMA NUMBER_2 &ht_l1_kp DOT NUMBER_3 &to_win_l1             &bt BT_CLR_ALL
-                                &msc SCRL_DOWN   &msc SCRL_UP                                                                                                                                                                       &kp LEFT_BRACKET      &kp TILDE
-                                                                  &trans                                                                                                                                                                                                         &kp SLASH
-                                                                                                    &trans    &trans &kp ESC    &kp SPACE
-                                                                                                    &trans    &trans &kp ENTER  &kp BACKSPACE
+&none        &kp F5             &kp F8           &kp F9           &kp F10          &kp F12                                                                                              &kp MINUS      &kp EQUAL            &kp SLASH            &kp ASTERISK          &kp EQUAL              &trans
+&kp TAB      &ht_l1_mkp Q MB4   &ht_l1_mkp W MB1 &ht_l1_mkp E MB2 &ht_l1_mkp R MB3 &ht_l1_mkp T MB5                                                                                     &bt BT_SEL 0   &ht_l1_kp U NUMBER_7 &ht_l1_kp I NUMBER_8 &ht_l1_kp O NUMBER_9  &ht_l1_kp P EQUAL      &kp F11
+&to_mac_base &ht_tog BLUE_MAC A &kp S            &kp D            &ht_f_mac 0 F    &ht_l1_kp G INSERT                                                                                   &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4 &ht_l1_kp INSERT NUMBER_5 &ht_l1_kp F3 NUMBER_6 &ht_l1_kp END NUMBER_0 &bt BT_CLR
+&kp F24      &kp Z              &kp X            &kp C            &kp V            &kp B                                                                                                &bt BT_SEL 2   &ht_l1_kp M NUMBER_1 &ht_l1_kp COMMA NUMBER_2 &ht_l1_kp DOT NUMBER_3 &to_win_l1             &bt BT_CLR_ALL
+                                &msc SCRL_DOWN   &msc SCRL_UP                                                                                                                                                                                      &kp LEFT_BRACKET      &kp TILDE
+                                                                  &trans                                                                                                                                                                                                 &kp SLASH
+                                                                                                        &trans    &trans &kp ESC    &kp SPACE
+                                                                                                        &trans    &trans &kp ENTER  &kp BACKSPACE
             >;
         };
 
         blue_mac {
             bindings = <
-&none       &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                   &kp N6         &kp C_VOL_UP  &kp N8          &kp N9             &kp N0                     &trans
-&kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                    &kp Y          &kp C_VOL_DN  &kp UP_ARROW    &kp O              &kp P                      &kp LEFT_BRACKET
-&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                                                    &kp H          &kp LEFT      &kp DOWN        &ht_kp F3 RIGHT    &lt_kp MAC_ZONES SEMICOLON &kp SQT
-&kp F24     &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                    &kp F16        &kp F13       &kp F14         &kp F15            &trans                     &kp MINUS
-                                &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                         &kp F17            &kp F18
-                                                                &trans                                                                                                                                                                                            &kp SLASH
-                                                                                            &trans    &none  &kp ESCAPE  &kp SPACE
-                                                                                            &trans    &none  &kp RET     &kp BACKSPACE
+&none       &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                                   &kp N6         &kp C_VOL_UP  &kp N8          &kp N9             &kp N0                     &trans
+&kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                                    &kp Y          &kp C_VOL_DN  &kp UP_ARROW    &kp O              &kp P                      &kp LEFT_BRACKET
+&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                                                                    &kp H          &kp LEFT      &kp DOWN        &ht_kp F3 RIGHT    &lt_kp MAC_ZONES SEMICOLON &kp SQT
+&kp F24     &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                                    &kp F16        &kp F13       &kp F14         &kp F15            &trans                     &kp MINUS
+                                &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                                        &kp F17            &kp F18
+                                                                &trans                                                                                                                                                                                 &kp SLASH
+                                                                                                        &trans    &none  &kp ESCAPE  &kp SPACE
+                                                                                                        &trans    &none  &kp RET     &kp BACKSPACE
             >;
         };
 
@@ -190,40 +190,40 @@
 
         win_base {
             bindings = <
-&none         &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                   &kp N6         &kp N7         &kp N8          &kp N9             &kp N0                     &kp LCTRL
-&kp TAB       &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
-&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D           &ht_f_win 0 F &kp G                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp WIN_ZONES SEMICOLON &kp SQT
-&kp LGUI      &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
-                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
-                                                                  &kp LSHIFT                                                                                                                                                                                         &lt_long WIN_F_KEYS SLASH
-                                                                                              &kp LCTRL         &none  &kp ESCAPE  &kp SPACE
-                                                                                              &none             &none  &kp RET     &kp BACKSPACE
+&none         &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                                   &kp N6         &kp N7         &kp N8          &kp N9             &kp N0                     &kp LCTRL
+&kp TAB       &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
+&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D           &ht_f_win 0 F &kp G                                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp WIN_ZONES SEMICOLON &kp SQT
+&kp LGUI      &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
+                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
+                                                                  &kp LSHIFT                                                                                                                                                                              &lt_long WIN_F_KEYS SLASH
+                                                                                                          &kp LCTRL         &none  &kp ESCAPE  &kp SPACE
+                                                                                                          &none             &none  &kp RET     &kp BACKSPACE
             >;
         };
 
         win_l1 {
             bindings = <
-&none         &kp F5             &kp F8           &kp F9           &kp F10          &kp F12                                                                                 &kp MINUS      &kp EQUAL            &kp SLASH            &kp ASTERISK          &kp EQUAL              &trans
-&kp TAB       &ht_l1_mkp Q MB4   &ht_l1_mkp W MB1 &ht_l1_mkp E MB2 &ht_l1_mkp R MB3 &ht_l1_mkp T MB5                                                                        &bt BT_SEL 0   &ht_l1_kp U NUMBER_7 &ht_l1_kp I NUMBER_8 &ht_l1_kp O NUMBER_9  &ht_l1_kp P EQUAL      &kp F11
-&to_win_base  &ht_tog BLUE_WIN A &kp S            &kp D            &ht_f_win 0 F    &ht_l1_kp G INSERT                                                                      &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4 &ht_l1_kp INSERT NUMBER_5 &ht_l1_kp F3 NUMBER_6 &ht_l1_kp END NUMBER_0 &bt BT_CLR
-&trans        &kp Z              &kp X            &kp C            &kp V            &kp B                                                                                   &bt BT_SEL 2   &ht_l1_kp M NUMBER_1 &ht_l1_kp COMMA NUMBER_2 &ht_l1_kp DOT NUMBER_3 &to_mac_l1             &bt BT_CLR_ALL
-                                 &msc SCRL_DOWN   &msc SCRL_UP                                                                                                                                                                       &kp LEFT_BRACKET      &kp TILDE
-                                                                   &trans                                                                                                                                                                                                         &kp SLASH
-                                                                                                      &trans              &trans &kp ESC    &kp SPACE
-                                                                                                      &trans              &trans &kp ENTER  &kp BACKSPACE
+&none         &kp F5             &kp F8           &kp F9           &kp F10          &kp F12                                                                                             &kp MINUS      &kp EQUAL            &kp SLASH            &kp ASTERISK          &kp EQUAL              &trans
+&kp TAB       &ht_l1_mkp Q MB4   &ht_l1_mkp W MB1 &ht_l1_mkp E MB2 &ht_l1_mkp R MB3 &ht_l1_mkp T MB5                                                                                    &bt BT_SEL 0   &ht_l1_kp U NUMBER_7 &ht_l1_kp I NUMBER_8 &ht_l1_kp O NUMBER_9  &ht_l1_kp P EQUAL      &kp F11
+&to_win_base  &ht_tog BLUE_WIN A &kp S            &kp D            &ht_f_win 0 F    &ht_l1_kp G INSERT                                                                                  &bt BT_SEL 1   &ht_l1_kp LCTRL NUMBER_4 &ht_l1_kp INSERT NUMBER_5 &ht_l1_kp F3 NUMBER_6 &ht_l1_kp END NUMBER_0 &bt BT_CLR
+&trans        &kp Z              &kp X            &kp C            &kp V            &kp B                                                                                               &bt BT_SEL 2   &ht_l1_kp M NUMBER_1 &ht_l1_kp COMMA NUMBER_2 &ht_l1_kp DOT NUMBER_3 &to_mac_l1             &bt BT_CLR_ALL
+                                 &msc SCRL_DOWN   &msc SCRL_UP                                                                                                                                                                                     &kp LEFT_BRACKET      &kp TILDE
+                                                                   &trans                                                                                                                                                                                                &kp SLASH
+                                                                                                          &trans            &trans &kp ESC    &kp SPACE
+                                                                                                          &trans            &trans &kp ENTER  &kp BACKSPACE
             >;
         };
 
         blue_win {
             bindings = <
-&none         &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                   &kp N6         &kp C_VOL_UP  &kp N8          &kp N9             &kp N0                     &trans
-&kp TAB       &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                    &kp Y          &kp C_VOL_DN  &kp UP_ARROW    &kp O              &kp P                      &kp LEFT_BRACKET
-&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D           &ht_f_win 0 F &kp G                                                                                    &kp H          &kp LEFT      &kp DOWN        &ht_kp F3 RIGHT    &lt_kp WIN_ZONES SEMICOLON &kp SQT
-&trans        &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                    &kp F16        &kp F13       &kp F14         &kp F15            &trans                     &kp MINUS
-                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                         &kp F17            &kp F18
-                                                                  &trans                                                                                                                                                                                            &kp SLASH
-                                                                                              &trans    &none  &kp ESCAPE  &kp SPACE
-                                                                                              &trans    &none  &kp RET     &kp BACKSPACE
+&none         &kp N1              &kp N2          &kp N3          &kp N4        &kp N5                                                                                                   &kp N6         &kp C_VOL_UP  &kp N8          &kp N9             &kp N0                     &trans
+&kp TAB       &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                                    &kp Y          &kp C_VOL_DN  &kp UP_ARROW    &kp O              &kp P                      &kp LEFT_BRACKET
+&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D           &ht_f_win 0 F &kp G                                                                                                    &kp H          &kp LEFT      &kp DOWN        &ht_kp F3 RIGHT    &lt_kp WIN_ZONES SEMICOLON &kp SQT
+&trans        &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                                    &kp F16        &kp F13       &kp F14         &kp F15            &trans                     &kp MINUS
+                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                                        &kp F17            &kp F18
+                                                                  &trans                                                                                                                                                                                 &kp SLASH
+                                                                                                          &trans    &none  &kp ESCAPE  &kp SPACE
+                                                                                                          &trans    &none  &kp RET     &kp BACKSPACE
             >;
         };
 
@@ -235,8 +235,8 @@
 &trans  &kp CC(Q) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &trans &trans &trans                 &trans                  &trans &trans
 &trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans &trans &kp CC(L)              &trans                  &trans &trans
 &trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans &trans &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)   &trans &trans
-                  &trans    &trans                                         &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)
-                            &kp LSHIFT                              &trans
+                  &trans    &trans                                         &kp CC(H)              &kp CC(J)
+                            &kp LSHIFT                                      &trans
                                       &trans &trans &trans &kp LALT
                                       &trans &trans &trans &trans
             >;
@@ -248,8 +248,8 @@
 &trans  &kp CC(Q) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &trans &trans &trans                 &trans                  &trans &trans
 &trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans &trans &kp CC(L)              &trans                  &trans &trans
 &trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans &trans &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)   &trans &trans
-                  &trans    &trans                                         &kp CC(LEFT_BRACKET)   &kp CC(RIGHT_BRACKET)
-                            &kp LSHIFT                              &trans
+                  &trans    &trans                                         &kp CC(H)              &kp CC(J)
+                            &kp LSHIFT                                      &trans
                                       &trans &trans &trans &kp LALT
                                       &trans &trans &trans &trans
             >;
@@ -259,27 +259,27 @@
 
         mac_f_keys {
             bindings = <
-&none       &kp F1              &kp F2          &kp F3          &kp F4        &kp F5                                                                                   &kp F6         &kp F7         &kp F8          &kp F9             &kp F10                    &kp LGUI
-&kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
-&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp MAC_ZONES SEMICOLON &kp SQT
-&kp F24     &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
-                                &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
-                                                                &kp LSHIFT                                                                                                                                                                                         &trans
-                                                                                            &kp LGUI  &none  &kp ESCAPE  &kp SPACE
-                                                                                            &none     &none  &kp RET     &kp BACKSPACE
+&none       &kp F1              &kp F2          &kp F3          &kp F4        &kp F5                                                                                                   &kp F6         &kp F7         &kp F8          &kp F9             &kp F10                    &kp LGUI
+&kp TAB     &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
+&to_mac_l1  &ht_tog BLUE_MAC A  &kp S           &kp D           &ht_f_mac 0 F &kp G                                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp MAC_ZONES SEMICOLON &kp SQT
+&kp F24     &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
+                                &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
+                                                                &kp LSHIFT                                                                                                                                                                              &trans
+                                                                                                        &kp LGUI  &none  &kp ESCAPE  &kp SPACE
+                                                                                                        &none     &none  &kp RET     &kp BACKSPACE
             >;
         };
 
         win_f_keys {
             bindings = <
-&none         &kp F1              &kp F2          &kp F3          &kp F4        &kp F5                                                                                   &kp F6         &kp F7         &kp F8          &kp F9             &kp F10                    &kp LCTRL
-&kp TAB       &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
-&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D           &ht_f_win 0 F &kp G                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp WIN_ZONES SEMICOLON &kp SQT
-&kp LGUI      &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
-                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
-                                                                  &kp LSHIFT                                                                                                                                                                                         &trans
-                                                                                              &kp LCTRL         &none  &kp ESCAPE  &kp SPACE
-                                                                                              &none             &none  &kp RET     &kp BACKSPACE
+&none         &kp F1              &kp F2          &kp F3          &kp F4        &kp F5                                                                                                   &kp F6         &kp F7         &kp F8          &kp F9             &kp F10                    &kp LCTRL
+&kp TAB       &kp Q               &kp W           &kp E           &kp R         &kp T                                                                                                    &kp Y          &kp U          &kp I           &kp O              &kp P                      &kp LEFT_BRACKET
+&to_win_l1    &ht_tog BLUE_WIN A  &kp S           &kp D           &ht_f_win 0 F &kp G                                                                                                    &kp H          &ht_kp LCTRL J &ht_kp INSERT K &ht_kp F3 L        &lt_kp WIN_ZONES SEMICOLON &kp SQT
+&kp LGUI      &kp Z               &kp X           &kp C           &kp V         &kp B                                                                                                    &kp N          &kp M          &kp COMMA       &ht_kp END DOT     &kp LALT                   &kp MINUS
+                                  &msc SCRL_DOWN  &msc SCRL_UP                                                                                                                                                                         &kp LEFT_BRACKET   &kp RIGHT_BRACKET
+                                                                  &kp LSHIFT                                                                                                                                                                              &trans
+                                                                                                          &kp LCTRL         &none  &kp ESCAPE  &kp SPACE
+                                                                                                          &none             &none  &kp RET     &kp BACKSPACE
             >;
         };
     };
