@@ -265,7 +265,7 @@
         mac_zones {
             bindings = <
 &none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans    &trans &trans               &trans                &trans &trans
-&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(M) &trans &kp CC(COMMA)        &kp CC(DOT)           &trans &trans
+&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(M) &trans &kp CC(COMMA)        &kp CC(M)           &trans &trans
 &trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans    &trans &kp CC(L)            &trans                &trans &trans
 &trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &kp CC(J) &trans &kp CC(LEFT_BRACKET) &kp CC(RIGHT_BRACKET) &trans &trans
                   &trans    &trans                                            &kp CC(H)            &kp CC(J)
@@ -278,7 +278,7 @@
         win_zones {
             bindings = <
 &none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans    &trans &trans               &trans                &trans &trans
-&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(M) &trans &kp CC(COMMA)        &kp CC(DOT)           &trans &trans
+&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(M) &trans &kp CC(COMMA)        &kp CC(M)           &trans &trans
 &trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &trans    &trans &kp CC(L)            &trans                &trans &trans
 &trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &kp CC(J) &trans &kp CC(LEFT_BRACKET) &kp CC(RIGHT_BRACKET) &trans &trans
                   &trans    &trans                                            &kp CC(H)            &kp CC(J)
