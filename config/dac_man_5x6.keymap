@@ -1,4 +1,4 @@
- #include <behaviors.dtsi>
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
@@ -265,26 +265,26 @@
         mac_zones {
             bindings = <
 &none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans      &trans      &trans                &trans                &trans &trans
-&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(M)   &trans      &kp CC(COMMA)         &kp CC(M)              &trans &trans
-&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &kp CC(N6)  &kp CC(N7)  &kp CC(L)             &trans                &trans &trans
-&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &kp CC(J)   &trans      &kp CC(LEFT_BRACKET)  &kp CC(RIGHT_BRACKET) &trans &trans
-                  &trans    &trans                                                                         &kp CC(H)             &kp CC(J)
-                            &kp LSHIFT                                                                     &trans
-                                      &trans &trans &trans &kp LALT
-                                      &trans &trans &trans &trans
+&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(N3)  &kp CC(N2)  &kp CC(N1)            &kp CC(N0)            &trans &trans
+&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &kp CC(N6)  &kp CC(N7)  &kp CC(LEFT_BRACKET)  &kp CC(RIGHT_BRACKET) &trans &trans
+&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans      &trans      &kp CC(H)             &kp CC(J)             &trans &trans
+                  &trans    &trans                                                                         &trans                &trans
+                            &kp LSHIFT                                                                     &kp LSHIFT
+                                      &kp CC(N4) &trans &kp CC(N5) &kp CC(L)
+                                      &trans     &trans &kp CC(N9) &kp CC(K)
             >;
         };
 
         win_zones {
             bindings = <
 &none   &kp CC(Y) &kp CC(U) &kp CC(I) &kp CC(O) &kp CC(P)    &trans      &trans      &trans                &trans                &trans &trans
-&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(M)   &trans      &kp CC(COMMA)         &kp CC(M)              &trans &trans
-&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &kp CC(N6)  &kp CC(N7)  &kp CC(L)             &trans                &trans &trans
-&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &kp CC(J)   &trans      &kp CC(LEFT_BRACKET)  &kp CC(RIGHT_BRACKET) &trans &trans
-                  &trans    &trans                                                                         &kp CC(H)             &kp CC(J)
-                            &kp LSHIFT                                                                     &trans
-                                      &trans &trans &trans &kp LALT
-                                      &trans &trans &trans &trans
+&trans  &kp CC(N) &kp CC(W) &kp CC(E) &kp CC(R) &kp CC(T)    &kp CC(N3)  &kp CC(N2)  &kp CC(N1)            &kp CC(N0)            &trans &trans
+&trans  &kp CC(A) &kp CC(S) &kp CC(D) &kp CC(F) &kp CC(G)    &kp CC(N6)  &kp CC(N7)  &kp CC(LEFT_BRACKET)  &kp CC(RIGHT_BRACKET) &trans &trans
+&trans  &kp CC(Z) &kp CC(X) &kp CC(C) &kp CC(V) &kp CC(B)    &trans      &trans      &kp CC(H)             &kp CC(J)             &trans &trans
+                  &trans    &trans                                                                         &trans                &trans
+                            &kp LSHIFT                                                                     &kp LSHIFT
+                                      &kp CC(N4) &trans &kp CC(N5) &kp CC(L)
+                                      &trans     &trans &kp CC(N9) &kp CC(K)
             >;
         };
 
@@ -317,6 +317,3 @@
         };
     };
 };
-
-переделай слой зон 
-там где в стандартной y u i должы быть 
